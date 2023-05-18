@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/Logo/driven_performance_logo_02_788573432007-removebg-preview.png'
 import logo1 from '../../assets/Logo/pngwing.com (8).png'
 
 
@@ -12,7 +11,7 @@ const Navbar = () => {
         <li><Link to='allToys'>All Toys</Link></li>
         <li><Link to='/myToys'>My Toys</Link></li>
         <li><Link to='/addToys'>Add a Toy</Link></li>
-        <li><Link to='/blog'>Blog</Link></li>
+        <li><Link to='/blog'>Blogs</Link></li>
 
 
     </>
