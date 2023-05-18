@@ -6,7 +6,15 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const Navbar = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogout = () => {
+            logOut()
+            .then()
+            .catch(error => {
+                console.error(error)
+            })
+    }
 
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
@@ -53,7 +61,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user?.email ? <>
-                            <button
+                            <button onClick={handleLogout}
                                 type="button"
                                 className="rounded-md bg-black px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-black-600/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                             >
