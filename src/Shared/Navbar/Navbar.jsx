@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo1 from '../../assets/Logo/pngwing.com (8).png'
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const Navbar = () => {
 
+    const { user } = useContext(AuthContext);
 
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='allToys'>All Toys</Link></li>
-        <li><Link to='/myToys'>My Toys</Link></li>
-        <li><Link to='/addToys'>Add a Toy</Link></li>
+        {
+            user?.email ?
+                <>
+                    <li><Link to='/myToys'>My Toys</Link></li>
+                    <li><Link to='/addToys'>Add a Toy</Link></li>
+
+                </> : ""
+        }
         <li><Link to='/blog'>Blogs</Link></li>
 
 
@@ -31,9 +39,9 @@ const Navbar = () => {
                     </div>
                     <div >
                         <Link to='/' className='flex items-center'><img className='w-20' src={logo1} alt="" />
-                        <h3 className='font-bold text-2xl ml-3 text-white italic'>Driven..</h3>
+                            <h3 className='font-bold text-2xl ml-3 text-white italic'>Driven..</h3>
                         </Link>
-                        
+
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -43,14 +51,25 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to='/login'>
-                        <button
-                            type="button"
-                            className="rounded-md bg-black px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-black-600/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                        >
-                            Login
-                        </button>
-                    </Link>
+                    {
+                        user?.email ? <>
+                            <button
+                                type="button"
+                                className="rounded-md bg-black px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-black-600/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                            >
+                                Logout
+                            </button>
+
+
+                        </> : <Link to='/login'>
+                            <button
+                                type="button"
+                                className="rounded-md bg-black px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-black-600/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                            >
+                                Login
+                            </button>
+                        </Link>
+                    }
                 </div>
             </div>
         </div>
