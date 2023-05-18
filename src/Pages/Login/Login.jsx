@@ -2,44 +2,44 @@ import React, { useContext } from 'react';
 import { ArrowRight } from 'lucide-react'
 import logo1 from '../../assets/Logo/pngwing.com (8).png'
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 
 const Login = () => {
 
-    // const {login, googleLogin} = useContext(AuthContext);
+    const { login } = useContext(AuthContext);
 
-    // const handleLogin = event =>{
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const email = form.email.value;
-    //     const password = form.password.value;
-    //     console.log(email)
+    const handleLogin = (event) => {
 
-    //     login(email,password)
-    //     .then(result =>{
-    //         const loggedUser = result.user;
-    //         console.log(loggedUser);
-    //         cogoToast.success('Login Successful!',{ position: 'top-center' });
-    //     })
-    //     .catch(error=> console.log(error))
-    // }
+        event.preventDefault();
 
+        setError("");
 
-    // const handleGoogleLogin = () =>{
-    //     googleLogin()
-    //     .then(result =>{
-    //         const loggedUser = result.user;
-    //         console.log(loggedUser)
-    //     })
-    //     .catch(error => console.log(error))
-    // }
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        login(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                toast.success('Login Successful')
+
+            })
+            .catch(error => {
+                console.error(error);
+                toast.error(error.message);
+                setError(error.message);
+            })
+    }
+
     return (
         <section className="rounded-md bg-black/70 p-2 my-8 mx-auto w-1/2">
             <div className="flex items-center justify-center bg-white px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
                 <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
                     <div className="mb-2">
-                       <img src={logo1} className='w-36' alt="" />
+                        <img src={logo1} className='w-36' alt="" />
                     </div>
                     <h2 className="text-2xl font-bold leading-tight text-black">Sign in to your account</h2>
                     <p className="mt-2text-sm text-gray-600 ">
@@ -51,7 +51,7 @@ const Login = () => {
                             Create a free account
                         </Link>
                     </p>
-                    <form  className="mt-8">
+                    <form onSubmit={handleLogin} className="mt-8">
                         <div className="space-y-5">
                             <div>
                                 <label htmlFor="" className="text-base font-medium text-gray-900">
@@ -112,7 +112,7 @@ const Login = () => {
                             </span>
                             Sign in with Google
                         </button>
-                       
+
                     </div>
                 </div>
             </div>
