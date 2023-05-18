@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from "lottie-react";
-import heroAnimation from '../../../assets/Hero.json'
+import heroAnimation from '../../../assets/Hero1.json'
 
 const Hero = () => {
     return (
@@ -15,29 +15,21 @@ const Hero = () => {
                         Your Destination for Fun and Excitement on Wheels!
                     </p>
                     <form action="" className="mt-8 flex items-start space-x-2">
-                        <div>
-                            <input
-                                className="flex w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
-                                type="email"
-                                placeholder="Enter your email"
-                                id="email"
-                            ></input>
-                            <p className="mt-2 text-sm text-gray-500">We care about your privacy</p>
-                        </div>
+
                         <div>
                             <button
                                 type="button"
                                 className="rounded-md bg-black px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                             >
-                                Subscribe
+                                Buy Toys
                             </button>
                         </div>
                     </form>
                 </div>
-                <div className=" lg:col-span-5 lg:-mr-8 xl:col-span-6">
-                    
-                        <Lottie animationData={heroAnimation} />
-                    
+                <div className="lg:col-span-5 lg:-mr-8 xl:col-span-6 my-auto">
+
+                    <Lottie animationData={heroAnimation} />
+
                 </div>
             </div>
         </div>

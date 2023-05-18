@@ -1,0 +1,13 @@
+[
+    {
+        "toyName": "Lightsaber Fury",
+        "picture": "https: //example.com/lightsaber-fury.jpg",
+        "price": 49.99,
+        "rating": 4.8,
+        "category": "Star Wars",
+        "availableQuantity": 7,
+        "sellerName": "Jedi Emporium",
+        "sellerEmail": "sales@jediemporium.com",
+        "details": "The Lightsaber Fury is a powerful lightsaber wielded by skilled Jedi Knights. This toy replica features a glowing blade, realistic sound effects, and a detachable hilt. It provides an authentic lightsaber experience for aspiring Jedi warriors."
+    }
+]
