@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react'
 import logo1 from '../../assets/Logo/pngwing.com (8).png'
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 
@@ -13,8 +14,6 @@ const Login = () => {
     const handleLogin = (event) => {
 
         event.preventDefault();
-
-        setError("");
 
         const form = event.target;
         const email = form.email.value;
@@ -30,7 +29,6 @@ const Login = () => {
             .catch(error => {
                 console.error(error);
                 toast.error(error.message);
-                setError(error.message);
             })
     }
 
