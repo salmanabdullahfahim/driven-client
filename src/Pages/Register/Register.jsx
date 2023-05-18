@@ -3,35 +3,61 @@ import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom';
 import logo1 from '../../assets/Logo/pngwing.com (8).png';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
+import { toast } from 'react-toastify';
 
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
 
-    const handleRegister = (event) =>{
-        event.preventDefault();
+  const handleRegister = (event) => {
+    event.preventDefault();
 
-        const form  = event.target;
-        const name = form.name.value;
-        const email =form.email.value;
-        const password = form.password.value;
-        const photo = form.photo.value;
-       
-        createUser(email,password)
-        .then(result =>{
-            const registerUser = result.user
-            console.log(registerUser)
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value;
 
-        })
-        .catch(error => console.log(error))
-    }
-    return (
-        <section className="rounded-md bg-black/70 p-2 my-8 mx-auto w-1/2">
+    createUser(email, password)
+      .then(result => {
+        const registerUser = result.user
+        console.log(registerUser)
+
+        updateUser(registerUser, name, photo);
+
+        form.reset();
+
+        toast.success("User has been created successfully!");
+
+      })
+      .catch(error => {
+        console.log(error)
+        toast.error(error.message)
+      })
+  }
+
+
+  const updateUser = (user, name, photo) => {
+    updateProfile(user, {
+      displayName: name,
+      photoURL: photo
+    })
+      .then(() => {
+
+      })
+      .catch(error => {
+        console.log(error.message)
+      })
+  }
+
+  return (
+    <section className="rounded-md bg-black/70 p-2 my-8 mx-auto w-1/2">
       <div className="flex items-center justify-center bg-white px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
           <div className="mb-2">
-          <img src={logo1} className='w-36' alt="" />
+            <img src={logo1} className='w-36' alt="" />
           </div>
           <h2 className="text-2xl font-bold leading-tight text-black">Sign up to create account</h2>
           <p className="mt-2 text-base text-gray-600">
@@ -84,7 +110,7 @@ const Register = () => {
                     className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                     type="url"
                     placeholder="photo url"
-                     name='photo'
+                    name='photo'
                   ></input>
                 </div>
               </div>
@@ -131,12 +157,12 @@ const Register = () => {
               </span>
               Sign up with Google
             </button>
-            
+
           </div>
         </div>
       </div>
     </section>
-    );
+  );
 };
 
 export default Register;

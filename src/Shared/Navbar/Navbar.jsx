@@ -9,7 +9,7 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
 
     const handleLogout = () => {
-            logOut()
+        logOut()
             .then()
             .catch(error => {
                 console.error(error)
@@ -20,7 +20,7 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='allToys'>All Toys</Link></li>
         {
-            user?.email ?
+            user ?
                 <>
                     <li><Link to='/myToys'>My Toys</Link></li>
                     <li><Link to='/addToys'>Add a Toy</Link></li>
@@ -60,10 +60,13 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user?.email ? <>
+                        user ? <>
+
+                            {user.photoURL && <img className="h-12 rounded-full border-2  border-white cursor-pointer" src={user?.photoURL} alt="" title={user?.displayName} />}
+
                             <button onClick={handleLogout}
                                 type="button"
-                                className="rounded-md bg-black px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-black-600/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                                className="ml-5 rounded-md bg-black px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-black-600/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                             >
                                 Logout
                             </button>
