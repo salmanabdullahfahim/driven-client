@@ -2,29 +2,30 @@ import React, { useContext } from 'react';
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom';
 import logo1 from '../../assets/Logo/pngwing.com (8).png';
-// import { AuthContext } from '../../Provider/AuthProvider';
+import { AuthContext } from '../../Provider/AuthProvider';
+
 
 const Register = () => {
 
-    // const {createUser} = useContext(AuthContext);
+    const {createUser} = useContext(AuthContext);
 
-    // const handleRegister = (event) =>{
-    //     event.preventDefault();
+    const handleRegister = (event) =>{
+        event.preventDefault();
 
-    //     const form  = event.target;
-    //     const name = form.name.value;
-    //     const email =form.email.value;
-    //     const password = form.password.value;
-    //     const description = form.description.value;
+        const form  = event.target;
+        const name = form.name.value;
+        const email =form.email.value;
+        const password = form.password.value;
+        const photo = form.photo.value;
        
-    //     createUser(email,password)
-    //     .then(result =>{
-    //         const registerUser = result.user
-    //         console.log(registerUser)
+        createUser(email,password)
+        .then(result =>{
+            const registerUser = result.user
+            console.log(registerUser)
 
-    //     })
-    //     .catch(error => console.log(error))
-    // }
+        })
+        .catch(error => console.log(error))
+    }
     return (
         <section className="rounded-md bg-black/70 p-2 my-8 mx-auto w-1/2">
       <div className="flex items-center justify-center bg-white px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
@@ -43,7 +44,7 @@ const Register = () => {
               Sign In
             </Link>
           </p>
-          <form  className="mt-8">
+          <form onSubmit={handleRegister} className="mt-8">
             <div className="space-y-5">
               <div>
                 <label htmlFor="name" className="text-base font-medium text-gray-900">
