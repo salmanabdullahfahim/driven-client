@@ -26,7 +26,7 @@ const ErrorPage = () => {
 
                             >
 
-                                Go back
+                                Go back to home
                             </button>
 
                         </Link>
