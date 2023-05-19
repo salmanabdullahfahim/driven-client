@@ -1,18 +1,57 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const AddToy = () => {
 
     const { user } = useContext(AuthContext);
 
-    const handleSubmit = event => {
+    const handleAddToy = (event) => {
         event.preventDefault();
+        const form = event.target;
+        const toyName = form.toyName.value;
+        const picture = form.photo.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const category = form.subCategory.value;
+        const availableQuantity = form.quantity.value;
+        const sellerName = form.sellerName.value;
+        const sellerEmail = form.sellerEmail.value;
+        const details = form.description.value;
+
+        const toyData = {
+            toyName,
+            picture,
+            price,
+            rating,
+            category,
+            availableQuantity,
+            sellerName,
+            sellerEmail,
+            details
+        }
+
+        fetch('http://localhost:5000/toys', {
+            method: 'POST',
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(toyData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                   toast.success('Toy added successfully!!')
+                    form.reset();
+                }
+            })
     }
     return (
         <>
             <h2 className='text-center text-3xl font-bold mt-6'>Add a Toy</h2>
             <div className="w-8/12 mx-auto my-12 border-2 border-gray-600 p-6 md:p-12 rounded">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleAddToy}>
                     <div className='grid grid-cols-2 gap-2 '>
 
                         <div className="mb-4">
