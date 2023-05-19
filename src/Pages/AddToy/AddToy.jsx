@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { toast } from 'react-toastify';
+import UseTitle from '../../Hooks/useTitle';
 
 const AddToy = () => {
+    UseTitle('Add Toy')
 
     const { user } = useContext(AuthContext);
 

@@ -4,10 +4,12 @@ import logo1 from '../../assets/Logo/pngwing.com (8).png'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Provider/AuthProvider';
+import UseTitle from '../../Hooks/useTitle';
 
 
 
 const Login = () => {
+    UseTitle('Login')
 
     const { login, signInWithGoogle } = useContext(AuthContext);
 

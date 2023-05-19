@@ -3,8 +3,10 @@ import Gallery from '../Gallery/Gallery';
 import Hero from '../Hero/Hero';
 import Stats from '../Stats/Stats';
 import ShopByCategory from '../ShopByCategory/ShopByCategory';
+import UseTitle from '../../../Hooks/useTitle';
 
 const Home = () => {
+    UseTitle('Home')
     return (
         <div>
             <Hero></Hero>
