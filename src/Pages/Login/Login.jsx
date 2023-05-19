@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ArrowRight } from 'lucide-react'
 import logo1 from '../../assets/Logo/pngwing.com (8).png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../Provider/AuthProvider';
 
@@ -10,6 +10,12 @@ import { AuthContext } from '../../Provider/AuthProvider';
 const Login = () => {
 
     const { login, signInWithGoogle } = useContext(AuthContext);
+
+    
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from.pathname || '/'
 
     const handleLogin = (event) => {
 
@@ -24,6 +30,7 @@ const Login = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 toast.success('Login Successful')
+                navigate(from, { replace: true })
 
             })
             .catch(error => {
@@ -37,7 +44,8 @@ const Login = () => {
         .then(result =>{
             const loggedUser = result.user;
             console.log(loggedUser);
-            toast.success('Login Successful')
+            toast.success('Login Successful');
+            navigate(from, { replace: true })
         })
         .catch(error =>{
             toast.error(error.message)
