@@ -42,7 +42,7 @@ const Stats = () => {
                                         Customer
                                     </dt>
                                     <dd className="order-1 text-5xl font-bold tracking-tight ">
-                                        <CountUp start={500} end={6000} duration={8} separator="," />
+                                        <CountUp start={500} end={6000} duration={6} separator="," />
                                     </dd>
                                 </div>
                             </dl>
