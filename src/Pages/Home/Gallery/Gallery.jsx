@@ -40,6 +40,7 @@ const Gallery = () => {
                 <Swiper
                     effect={"coverflow"}
                     grabCursor={true}
+                    loop={true}
                     centeredSlides={true}
                     slidesPerView={"auto"}
                     coverflowEffect={{
