@@ -17,14 +17,14 @@ const ToyCard = ({ toy }) => {
                     {toyName} <ArrowUpRight className="ml-2 h-4 w-4" />
                 </h1>
                 <p className="mt-3 text-sm text-gray-600">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, debitis?
+                   Seller: {sellerName}
                 </p>
                 <div className="mt-4">
                     <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
                         Category: {category}
                     </span>
                     <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
-                        Price: {price}
+                        Price: $ {price}
                     </span>
                     <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
                         Available Quantity: {availableQuantity}

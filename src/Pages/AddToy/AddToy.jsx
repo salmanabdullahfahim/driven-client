@@ -89,7 +89,7 @@ const AddToy = () => {
                                 id="sellerName"
                                 className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                                 name='sellerName'
-                                value={user?.displayName}
+                                defaultValue={user?.displayName}
                                 required
                             />
                         </div>
@@ -102,7 +102,7 @@ const AddToy = () => {
                                 id="sellerEmail"
                                 className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                                 name='sellerEmail'
-                                value={user?.email}
+                                defaultValue={user?.email}
                                 required
                             />
                         </div>

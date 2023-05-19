@@ -4,35 +4,35 @@ import logo1 from '../../assets/Logo/pngwing.com (8).png'
 
 const Footer = () => {
     return (
-        <footer aria-label="Site Footer" class="bg-black">
+        <footer aria-label="Site Footer" className="bg-black">
             <div
-                class="max-w-screen-xl px-4 py-6 mx-auto space-y-8 sm:px-6 lg:space-y-16 lg:px-8"
+                className="max-w-screen-xl px-4 py-6 mx-auto space-y-8 sm:px-6 lg:space-y-16 lg:px-8"
             >
-                <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
                     <div>
-                        <div class="text-white">
+                        <div className="text-white">
                             <Link to='/' className='flex items-center'><img className='w-20' src={logo1} alt="" />
                                 <h3 className='font-bold text-2xl ml-3 text-white italic'>Driven..</h3>
                             </Link>
                         </div>
 
-                        <p class="max-w-xs mt-4 text-white">
+                        <p className="max-w-xs mt-4 text-white">
 
                             Ignite your child's imagination with the ultimate car toy destination. Discover endless fun and adventure on wheels, all in one place.
                         </p>
 
-                        <ul class="flex gap-6 mt-8">
+                        <ul className="flex gap-6 mt-8">
                             <li>
                                 <Link
 
                                     rel="noreferrer"
 
-                                    class=" transition hover:opacity-75 text-white"
+                                    className=" transition hover:opacity-75 text-white"
                                 >
-                                    <span class="sr-only">Facebook</span>
+                                    <span className="sr-only">Facebook</span>
 
                                     <svg
-                                        class="w-6 h-6"
+                                        className="w-6 h-6"
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
                                         aria-hidden="true"
@@ -48,12 +48,12 @@ const Footer = () => {
 
                             <li>
                                 <Link
-                                    class=" transition hover:opacity-75 text-white"
+                                    className=" transition hover:opacity-75 text-white"
                                 >
-                                    <span class="sr-only">Instagram</span>
+                                    <span className="sr-only">Instagram</span>
 
                                     <svg
-                                        class="w-6 h-6"
+                                        className="w-6 h-6"
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
                                         aria-hidden="true"
@@ -70,12 +70,12 @@ const Footer = () => {
                             <li>
                                 <Link
 
-                                    class=" transition hover:opacity-75 text-white"
+                                    className=" transition hover:opacity-75 text-white"
                                 >
-                                    <span class="sr-only">Twitter</span>
+                                    <span className="sr-only">Twitter</span>
 
                                     <svg
-                                        class="w-6 h-6"
+                                        className="w-6 h-6"
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
                                         aria-hidden="true"
@@ -92,12 +92,12 @@ const Footer = () => {
                             <li>
                                 <Link
 
-                                    class=" transition hover:opacity-75 text-white"
+                                    className=" transition hover:opacity-75 text-white"
                                 >
-                                    <span class="sr-only">Dribbble</span>
+                                    <span className="sr-only">Dribbble</span>
 
                                     <svg
-                                        class="w-6 h-6"
+                                        className="w-6 h-6"
                                         fill="currentColor"
                                         viewBox="0 0 24 24"
                                         aria-hidden="true"
@@ -114,16 +114,16 @@ const Footer = () => {
                     </div>
 
                     <div
-                        class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4"
+                        className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4"
                     >
                         <div>
-                            <p class="font-medium text-white">Services</p>
+                            <p className="font-medium text-white">Services</p>
 
-                            <nav aria-label="Footer Navigation - Services" class="mt-6">
-                                <ul class="space-y-4 text-sm">
+                            <nav aria-label="Footer Navigation - Services" className="mt-6">
+                                <ul className="space-y-4 text-sm">
                                     <li>
                                        <Link
-                                            class=" transition hover:opacity-75 text-white"
+                                            className=" transition hover:opacity-75 text-white"
                                         >
                                             Extensive Toy Car Collection
                                         </Link>
@@ -131,7 +131,7 @@ const Footer = () => {
 
                                     <li>
                                         <Link
-                                            class=" transition hover:opacity-75 text-white"
+                                            className=" transition hover:opacity-75 text-white"
                                         >
                                             Accessories and Spare Parts
                                         </Link>
@@ -139,7 +139,7 @@ const Footer = () => {
 
                                     <li>
                                         <Link
-                                            class=" transition hover:opacity-75 text-white"
+                                            className=" transition hover:opacity-75 text-white"
                                         >
                                             Playtime Inspiration and Ideas
                                         </Link>
@@ -147,7 +147,7 @@ const Footer = () => {
 
                                     <li>
                                         <Link
-                                            class=" transition hover:opacity-75 text-white"
+                                            className=" transition hover:opacity-75 text-white"
                                         >
                                             Gift Sets and Bundles
                                         </Link>
@@ -155,7 +155,7 @@ const Footer = () => {
 
                                     <li>
                                         <Link
-                                            class=" transition hover:opacity-75 text-white"
+                                            className=" transition hover:opacity-75 text-white"
                                         >
                                           Customer Support and Assistance
                                         </Link>
@@ -165,13 +165,13 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <p class="font-medium text-white">Company</p>
+                            <p className="font-medium text-white">Company</p>
 
-                            <nav aria-label="Footer Navigation - Company" class="mt-6">
-                                <ul class="space-y-4 text-sm">
+                            <nav aria-label="Footer Navigation - Company" className="mt-6">
+                                <ul className="space-y-4 text-sm">
                                     <li>
                                         <Link
-                                           class=" transition hover:opacity-75 text-white"
+                                           className=" transition hover:opacity-75 text-white"
                                         >
                                             About
                                         </Link>
@@ -179,7 +179,7 @@ const Footer = () => {
 
                                     <li>
                                         <Link
-                                            class=" transition hover:opacity-75 text-white"
+                                            className=" transition hover:opacity-75 text-white"
                                         >
                                             Meet the Team
                                         </Link>
@@ -187,7 +187,7 @@ const Footer = () => {
 
                                     <li>
                                         <Link
-                                             class=" transition hover:opacity-75 text-white"
+                                             className=" transition hover:opacity-75 text-white"
                                         >
                                             Accounts Review
                                         </Link>
@@ -197,13 +197,13 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <p class="font-medium text-white">Helpful Links</p>
+                            <p className="font-medium text-white">Helpful Links</p>
 
-                            <nav aria-label="Footer Navigation - Company" class="mt-6">
-                                <ul class="space-y-4 text-sm">
+                            <nav aria-label="Footer Navigation - Company" className="mt-6">
+                                <ul className="space-y-4 text-sm">
                                     <li>
                                         <Link
-                                            class=" transition hover:opacity-75 text-white"
+                                            className=" transition hover:opacity-75 text-white"
                                         >
                                             Contact
                                         </Link>
@@ -211,7 +211,7 @@ const Footer = () => {
 
                                     <li>
                                         <Link
-                                             class=" transition hover:opacity-75 text-white"
+                                             className=" transition hover:opacity-75 text-white"
                                         >
                                             FAQs
                                         </Link>
@@ -219,7 +219,7 @@ const Footer = () => {
 
                                     <li>
                                         <Link
-                                           class=" transition hover:opacity-75 text-white"
+                                           className=" transition hover:opacity-75 text-white"
                                         >
                                             Live Chat
                                         </Link>
@@ -229,13 +229,13 @@ const Footer = () => {
                         </div>
 
                         <div>
-                            <p class="font-medium text-white">Address</p>
+                            <p className="font-medium text-white">Address</p>
 
-                            <nav aria-label="Footer Navigation - Legal" class="mt-6">
-                                <ul class="space-y-4 text-sm">
+                            <nav aria-label="Footer Navigation - Legal" className="mt-6">
+                                <ul className="space-y-4 text-sm">
                                     <li>
                                         <p
-                                             class=" transition hover:opacity-75 text-white"
+                                             className=" transition hover:opacity-75 text-white"
                                         >
                                             East Court, Block-D, Shop-1
                                         </p>
@@ -243,14 +243,14 @@ const Footer = () => {
 
                                     <li>
                                         <p
-                                          class=" transition hover:opacity-75 text-white"
+                                          className=" transition hover:opacity-75 text-white"
                                         >
                                            Jamuna Future Park, Dhaka
                                         </p>
                                     </li>
                                     <li>
                                         <p
-                                          class=" transition hover:opacity-75 text-white"
+                                          className=" transition hover:opacity-75 text-white"
                                         >
                                            Phone: +88017000000
                                         </p>
@@ -262,7 +262,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <p class="text-xs text-white">
+                <p className="text-xs text-white">
                     &copy; 2023 Driven.. All rights reserved.
                 </p>
             </div>

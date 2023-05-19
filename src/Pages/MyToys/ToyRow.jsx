@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const ToyRow = ({toy}) => {
+const ToyRow = ({ toy, handleDelete }) => {
 
-    const {picture,price, sellerName, toyName, category,availableQuantity } = toy
+    const { _id, picture, price, sellerName, toyName, category, availableQuantity } = toy;
+
+  
     return (
         <tr>
-            
+
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
@@ -20,16 +23,16 @@ const ToyRow = ({toy}) => {
                 </div>
             </td>
             <td>
-               <h3>{price} $</h3>
-                
+                <h3>{price} $</h3>
+
             </td>
             <td>{availableQuantity}</td>
             <td>
                 {sellerName}
             </td>
             <td>
-                <button className='bg-green-500 rounded p-1 mr-2'>Update</button>
-                <button className='bg-red-500  rounded p-1'>Delete</button>
+                <Link to='/updateToys'> <button className='bg-green-500 rounded p-1 mr-2'>Update</button></Link>
+                <button className='bg-red-500  rounded p-1' onClick={() => handleDelete(_id)}>Delete</button>
             </td>
         </tr>
     );
