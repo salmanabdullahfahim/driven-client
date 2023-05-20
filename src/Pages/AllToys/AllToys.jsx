@@ -1,24 +1,35 @@
 import React, { useEffect, useState } from 'react';
-import ToyCard from './ToyCard';
 import UseTitle from '../../Hooks/useTitle';
 import AllToyRow from './AllToyRow';
+import { SyncLoader } from 'react-spinners';
 
 const AllToys = () => {
     UseTitle('All Toys')
 
     const [toys, setToys] = useState([]);
     const [searchText, setSearchText] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        setIsLoading(true);
         fetch('http://localhost:5000/toys')
             .then(res => res.json())
-            .then(data => setToys(data))
+            .then(data => {
+
+                setToys(data);
+                setIsLoading(false);
+
+            })
     }, [])
 
     const handleSearch = () => {
+        setIsLoading(true);
         fetch(`http://localhost:5000/toySearchByName/${searchText}`)
             .then(res => res.json())
-            .then(data => setToys(data))
+            .then(data => {
+                setToys(data);
+                setIsLoading(false);
+            })
     }
 
     return (
@@ -57,26 +68,34 @@ const AllToys = () => {
                 </button>
             </div>
 
-            <div className="w-11/12 mx-auto my-12">
-                <table className="min-w-full">
-                    <thead>
-                        <tr className="bg-gray-100">
-                            <th className="py-2 px-4">Photo</th>
-                            <th className="py-2 px-4">Seller</th>
-                            <th className="py-2 px-4">Toy Name</th>
-                            <th className="py-2 px-4">Sub-category</th>
-                            <th className="py-2 px-4">Price</th>
-                            <th className="py-2 px-4">Available Quantity</th>
-                            <th className="py-2 px-4">Details</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            toys.map(toy => <AllToyRow key={toy._id} toy={toy}></AllToyRow>)
-                        }
-                    </tbody>
-                </table>
-            </div>
+            {
+                isLoading ? (
+                    <div className="flex justify-center items-center h-32">
+                        <div className="loader">
+                            <SyncLoader color="#000000" />
+                        </div>
+                    </div>
+                ) : (<div className="w-11/12 mx-auto my-12">
+                    <table className="min-w-full">
+                        <thead>
+                            <tr className="bg-gray-100">
+                                <th className="py-2 px-4">Photo</th>
+                                <th className="py-2 px-4">Seller</th>
+                                <th className="py-2 px-4">Toy Name</th>
+                                <th className="py-2 px-4">Sub-category</th>
+                                <th className="py-2 px-4">Price</th>
+                                <th className="py-2 px-4">Available Quantity</th>
+                                <th className="py-2 px-4">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                toys.map(toy => <AllToyRow key={toy._id} toy={toy}></AllToyRow>)
+                            }
+                        </tbody>
+                    </table>
+                </div>)
+            }
         </div>
     );
 };
