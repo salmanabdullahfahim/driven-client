@@ -16,55 +16,67 @@ const ToyDetails = () => {
     const { toyName, category, price, availableQuantity, sellerName, picture, details, sellerEmail, rating } = toy
 
     return (
-        <div className='mx-auto my-24'>
-            <div className="flex max-w-2xl flex-col items-center rounded-md border md:flex-row mx-auto">
-                <div className="h-full w-full md:h-[200px] md:w-[300px]">
+        <section className="overflow-hidden">
+            <div className="mx-auto max-w-5xl px-5 py-24">
+                <div className="mx-auto flex flex-wrap items-center lg:w-full">
                     <img
+                        alt="Nike Air Max 21A"
+                        className="h-64 w-full rounded object-cover lg:h-96 lg:w-1/2"
                         src={picture}
-                        alt="Laptop"
-                        className="h-full w-full rounded-md object-cover"
                     />
-                </div>
-                <div>
-                    <div className="p-4">
-                        <h1 className="inline-flex items-center text-lg font-semibold">
-                            {toyName}<ArrowUpRight className="ml-2 h-4 w-4" />
-                        </h1>
-                        <p className="mt-3 text-sm text-gray-600">
+                    <div className="mt-6 w-full lg:mt-0 lg:w-1/2 lg:pl-10">
+
+                        <h1 className="my-4 text-3xl font-semibold text-black">{toyName}</h1>
+                        <div className="my-4 flex items-center">
+                            <span className="flex items-center space-x-1">
+                                <span className="title-font text-xl font-bold text-gray-900">${price}</span>
+
+                            </span>
+                        </div>
+                        <p className="leading-relaxed">
                             {details}
                         </p>
-                        <div className="mt-4">
-                            <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
-                                Price: {price}
-                            </span>
-                            <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
-                                Available Quantity: {availableQuantity}
-                            </span>
+                        <div className="mb-5 mt-6 flex items-center border-b-2 border-gray-100 pb-5">
+                            <div className="">
+                                <h2 className="mr-3 text-sm font-semibold bg-gray-100 rounded-lg p-2">Seller: {sellerName}
+                                </h2> <br />
+                                <span className="mr-3 text-sm font-semibold bg-gray-100 rounded-lg p-2">Email: {sellerEmail}
+                                </span>
 
+                            </div>
+                            <div className="ml-auto flex items-center">
+                                <span className="mr-3 text-sm font-semibold">Available Quantity: {availableQuantity}
+                                </span>
+
+                            </div>
                         </div>
-                        <div className="mt-3 flex items-center justify-between">
-
-                            <span className="flex flex-col">
-                                <span className="text-[10px] font-medium text-gray-900">Seller: {sellerName}</span>
-                                <span className="text-[8px] font-medium text-gray-500">Email: {sellerEmail}</span>
-                            </span>
-                            <span className='flex items-center gap-2'>
+                        <div className="flex items-center justify-between">
+                            <div className='flex gap-2 items-center'>
                                 <Rating
                                     style={{ maxWidth: 100 }}
                                     value={rating}
                                     readOnly
                                 ></Rating>
-                                {rating}
-                            </span>
+
+                                <span className="ml-3 inline-block text-xs font-semibold">{rating}</span>
+                            </div>
+                            <button
+                                type="button"
+                                className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                            >
+                                Add to Cart
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
 export default ToyDetails;
+
+
 
 
 
