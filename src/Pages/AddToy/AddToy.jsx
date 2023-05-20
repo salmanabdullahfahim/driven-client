@@ -63,7 +63,7 @@ const AddToy = () => {
                             <input
                                 type="text"
                                 id="toyName"
-                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-gray-500"
                                 name='toyName'
                                 required
                             />
@@ -75,7 +75,7 @@ const AddToy = () => {
                             <input
                                 type="link"
                                 id="pictureUrl"
-                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-gray-500"
                                 name='photo'
                                 required
                             />
@@ -87,7 +87,7 @@ const AddToy = () => {
                             <input
                                 type="text"
                                 id="sellerName"
-                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-gray-500"
                                 name='sellerName'
                                 defaultValue={user?.displayName}
                                 required
@@ -100,7 +100,7 @@ const AddToy = () => {
                             <input
                                 type="email"
                                 id="sellerEmail"
-                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-gray-500"
                                 name='sellerEmail'
                                 defaultValue={user?.email}
                                 required
@@ -113,7 +113,7 @@ const AddToy = () => {
                             <input
                                 type="text"
                                 id="subCategory"
-                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-gray-500"
                                 name='subCategory'
                                 required
                             />
@@ -125,7 +125,7 @@ const AddToy = () => {
                             <input
                                 type="text"
                                 id="price"
-                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-gray-500"
                                 name='price'
                                 required
                             />
@@ -137,7 +137,7 @@ const AddToy = () => {
                             <input
                                 type="text"
                                 id="rating"
-                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-gray-500"
                                 name='rating'
                                 required
                             />
@@ -149,7 +149,7 @@ const AddToy = () => {
                             <input
                                 type="number"
                                 id="quantity"
-                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-gray-500"
                                 name='quantity'
                                 required
                             />
@@ -160,7 +160,7 @@ const AddToy = () => {
                             </label>
                             <textarea
                                 id="description"
-                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-gray-500"
                                 name='description'
                                 required
                             ></textarea>
