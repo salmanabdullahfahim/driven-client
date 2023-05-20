@@ -1,6 +1,6 @@
 import React from 'react';
 import Lottie from "lottie-react";
-import heroAnimation from '../../../assets/Hero.json'
+import heroAnimation from '../../../assets/Hero1.json'
 
 const Hero = () => {
     return (
@@ -10,8 +10,8 @@ const Hero = () => {
                     data-aos-easing="ease-out-cubic"
                     data-aos-duration="1000">
 
-                    <h1 className="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-6xl">
-                        Welcome to Driven..
+                    <h1 className="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-4xl">
+                    Where Fun and Excitement Drive the Way - Driven..
                     </h1>
                     <p className="mt-8 text-lg text-gray-700">
                         Your Destination for Fun and Excitement on Wheels!
@@ -21,7 +21,7 @@ const Hero = () => {
                         <div>
                             <button
                                 type="button" 
-                                className="rounded-md bg-black px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                                className="rounded-md bg-black px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                             >
                                 Buy Toys
                             </button>

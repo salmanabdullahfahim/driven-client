@@ -11,7 +11,7 @@ import UseTitle from '../../Hooks/useTitle';
 const Register = () => {
   UseTitle('Register')
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, logOut } = useContext(AuthContext);
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -30,6 +30,9 @@ const Register = () => {
         updateUser(registerUser, name, photo);
 
         form.reset();
+        logOut()
+        .then(()=>{})
+        .catch(error => toast.error(error.message))
 
         toast.success("User has been created successfully!");
 

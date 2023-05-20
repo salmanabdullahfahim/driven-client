@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ToyCard from './ToyCard';
 import UseTitle from '../../Hooks/useTitle';
+import AllToyRow from './AllToyRow';
 
 const AllToys = () => {
     UseTitle('All Toys')
@@ -14,10 +15,10 @@ const AllToys = () => {
             .then(data => setToys(data))
     }, [])
 
-    const handleSearch = () =>{
+    const handleSearch = () => {
         fetch(`http://localhost:5000/toySearchByName/${searchText}`)
-        .then(res => res.json())
-        .then(data => setToys(data))
+            .then(res => res.json())
+            .then(data => setToys(data))
     }
 
     return (
@@ -27,7 +28,7 @@ const AllToys = () => {
 
             <div className="flex items-center justify-center">
                 <input
-                    onChange={(event)=> setSearchText(event.target.value)}
+                    onChange={(event) => setSearchText(event.target.value)}
                     type="text"
                     placeholder="Search..."
                     className="border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:border-gray-600"
@@ -56,13 +57,29 @@ const AllToys = () => {
                 </button>
             </div>
 
-            <div className='grid md:grid-2 lg:grid-cols-3 gap-3 my-6'>
-                {
-                    toys.map(toy => <ToyCard key={toy._id} toy={toy}></ToyCard>)
-                }
+            <div className="w-11/12 mx-auto my-12">
+                <table className="min-w-full">
+                    <thead>
+                        <tr className="bg-gray-100">
+                            <th className="py-2 px-4">Photo</th>
+                            <th className="py-2 px-4">Seller</th>
+                            <th className="py-2 px-4">Toy Name</th>
+                            <th className="py-2 px-4">Sub-category</th>
+                            <th className="py-2 px-4">Price</th>
+                            <th className="py-2 px-4">Available Quantity</th>
+                            <th className="py-2 px-4">Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            toys.map(toy => <AllToyRow key={toy._id} toy={toy}></AllToyRow>)
+                        }
+                    </tbody>
+                </table>
             </div>
         </div>
     );
 };
 
 export default AllToys;
+
