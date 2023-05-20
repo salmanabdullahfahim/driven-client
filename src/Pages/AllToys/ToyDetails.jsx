@@ -3,6 +3,10 @@ import { ArrowUpRight } from 'lucide-react'
 import { useLoaderData } from 'react-router-dom';
 import UseTitle from '../../Hooks/useTitle';
 
+import { Rating } from "@smastrom/react-rating";
+
+import "@smastrom/react-rating/style.css";
+
 const ToyDetails = () => {
 
     UseTitle('Toy Details')
@@ -36,15 +40,20 @@ const ToyDetails = () => {
                             <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
                                 Available Quantity: {availableQuantity}
                             </span>
-                           
+
                         </div>
                         <div className="mt-3 flex items-center justify-between">
-                           
+
                             <span className="flex flex-col">
                                 <span className="text-[10px] font-medium text-gray-900">Seller: {sellerName}</span>
                                 <span className="text-[8px] font-medium text-gray-500">Email: {sellerEmail}</span>
                             </span>
-                            <span>
+                            <span className='flex items-center gap-2'>
+                                <Rating
+                                    style={{ maxWidth: 100 }}
+                                    value={rating}
+                                    readOnly
+                                ></Rating>
                                 {rating}
                             </span>
                         </div>
