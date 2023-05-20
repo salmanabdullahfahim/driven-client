@@ -3,12 +3,17 @@ import ToyCard from '../../AllToys/ToyCard';
 
 const PoliceCar = () => {
     const [toys, setToys] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const url = `http://localhost:5000/CategoryToys/MiniPoliceCar`
     useEffect(()=>{
+        setIsLoading(true)
         fetch(url)
         .then(res => res.json())
-        .then(data => setToys(data))
+        .then(data => {
+            setToys(data);
+            setIsLoading(false);
+        })
     },[toys])
     
     return (
