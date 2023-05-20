@@ -11,10 +11,12 @@ const MyToys = () => {
     const { user } = useContext(AuthContext);
 
     const [toys, setToys] = useState([]);
+    const [latestData, setLatestData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [sortOption, setSortOption] = useState('');
 
 
-    const url = `http://localhost:5000/myToys?email=${user?.email}`
+    const url = `http://localhost:5000/myToys?email=${user?.email}&sort=${sortOption}`;
 
     useEffect(() => {
         setIsLoading(true);
@@ -23,9 +25,14 @@ const MyToys = () => {
             .then(data => {
 
                 setToys(data);
+                setLatestData(data);
                 setIsLoading(false);
             })
-    }, [user]);
+    }, [user, sortOption]);
+
+    useEffect(() => {
+        setToys(latestData);
+    }, [latestData]);
 
 
 
@@ -61,13 +68,17 @@ const MyToys = () => {
         })
     }
 
+    const handleSortChange = event => {
+        setSortOption(event.target.value);
+    };
+
     return (
         <>
             <h2 className='text-center font-bold text-3xl mt-6'> My Toys</h2>
             <div className="w-full mt-6 flex justify-end">
                 <div className="flex mb-4 items-center">
                     <label htmlFor="sortPrice" className="mr-2">Sort by Price:</label>
-                    <select id="sortPrice" className="p-2  rounded-xl shadow-md">
+                    <select id="sortPrice" className="p-2  rounded-xl shadow-md" value={sortOption} onChange={handleSortChange}>
                         <option value="">Select</option>
                         <option value="asc">Low to High</option>
                         <option value="desc">High to Low</option>
