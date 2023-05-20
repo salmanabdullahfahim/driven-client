@@ -1,9 +1,11 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react'
 import { useLoaderData } from 'react-router-dom';
+import UseTitle from '../../Hooks/useTitle';
 
 const ToyDetails = () => {
 
+    UseTitle('Toy Details')
     const toy = useLoaderData();
 
 
