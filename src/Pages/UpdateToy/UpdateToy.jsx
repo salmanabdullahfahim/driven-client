@@ -3,6 +3,8 @@ import UseTitle from '../../Hooks/useTitle';
 
 const UpdateToy = () => {
     UseTitle('Update Toy')
+
+    
     return (
         <>
             <h2 className='text-center text-3xl font-bold mt-6'>Update Toy</h2>

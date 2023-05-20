@@ -18,7 +18,7 @@ const MyToys = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setToys(data))
-    }, [url]);
+    }, [user]);
 
 
 
