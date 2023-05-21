@@ -79,9 +79,10 @@ const AllToys = () => {
                     <table className="min-w-full">
                         <thead>
                             <tr className="bg-gray-100">
+                                <th className="py-2 px-4">Serial</th>
                                 <th className="py-2 px-4">Photo</th>
-                                <th className="py-2 px-4">Seller</th>
                                 <th className="py-2 px-4">Toy Name</th>
+                                <th className="py-2 px-4">Seller</th>
                                 <th className="py-2 px-4">Sub-category</th>
                                 <th className="py-2 px-4">Price</th>
                                 <th className="py-2 px-4">Available Quantity</th>
@@ -90,7 +91,7 @@ const AllToys = () => {
                         </thead>
                         <tbody>
                             {
-                                toys.map(toy => <AllToyRow key={toy._id} toy={toy}></AllToyRow>)
+                                toys.map((toy, index) => <AllToyRow key={toy._id} toy={toy} index={index + 1}></AllToyRow>)
                             }
                         </tbody>
                     </table>

@@ -1,21 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const AllToyRow = ({ toy }) => {
+const AllToyRow = ({ toy, index }) => {
 
     const { _id, sellerName, toyName, category, price, availableQuantity, picture } = toy
     return (
         <tr>
             <td>
-                <img src={picture} className='w-16 rounded-lg mx-auto' alt="" />
+                <h3 className='text-center'>{index}</h3>
             </td>
             <td>
-                <h3 className='text-center'>{sellerName}</h3>
-
+                <img src={picture} className='w-16 rounded-lg mx-auto' alt="" />
             </td>
             <td>
                 <h3 className='text-center'>{toyName}</h3>
             </td>
+
+            <td>
+                <h3 className='text-center'>{sellerName}</h3>
+
+            </td>
+            
             <td>
                 <h3 className='text-center'>{category}</h3>
             </td>
