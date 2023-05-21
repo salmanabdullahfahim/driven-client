@@ -21,7 +21,7 @@ const ToyDetails = () => {
                 <div className="mx-auto flex flex-wrap items-center lg:w-full">
                     <img
                         alt=""
-                        className="h-64 w-full rounded object-cover lg:h-11/12 lg:w-full"
+                        className="h-64 w-full rounded-md object-contain lg:h-96 lg:w-1/2"
                         src={picture}
                     />
                     <div className="mt-6 w-full lg:mt-0 lg:w-1/2 lg:pl-10">

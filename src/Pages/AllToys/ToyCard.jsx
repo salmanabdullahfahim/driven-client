@@ -10,11 +10,11 @@ const ToyCard = ({ toy }) => {
 
     const { _id, toyName, category, price, availableQuantity, sellerName, picture, rating } = toy
     return (
-        <div className="w-[350px] mx-auto rounded-md border">
+        <div className="w-[350px] mx-auto rounded-md border shadow-2xl">
             <img
                 src={picture}
                 alt="Laptop"
-                className="h-[200px] w-full rounded-t-md object-cover"
+                className="h-[200px] w-full rounded-t-md object-contain"
                 data-aos="zoom-in"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="1000"
