@@ -36,7 +36,7 @@ const AllToys = () => {
 
     return (
         <div>
-            <h2 className='text-3xl font-bold text-center my-6'>All Toys</h2>
+            <h2 className='text-3xl font-bold text-center my-6 italic'>All Toys</h2>
 
 
             <div className="flex items-center justify-center">

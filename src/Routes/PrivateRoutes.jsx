@@ -21,7 +21,7 @@ const PrivateRoutes = ({ children }) => {
     }
     else{
         Swal.fire({
-            icon: 'info',
+            icon: 'warning',
             title: 'You need to login first.',
             showConfirmButton: false,
             timer: 1500

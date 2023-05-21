@@ -74,10 +74,10 @@ const MyToys = () => {
 
     return (
         <>
-            <h2 className='text-center font-bold text-3xl mt-6'> My Toys</h2>
-            <div className="w-full mt-6 flex justify-end">
-                <div className="flex mb-4 items-center">
-                    <label htmlFor="sortPrice" className="mr-2">Sort by Price:</label>
+            <h2 className='text-center font-bold text-3xl mt-6 italic'> My Toys</h2>
+            <div className="w-full mt-6 ">
+                <div className="flex mb-4 items-center justify-end mr-12">
+                    <label htmlFor="sortPrice" className="mr-2 text-md font-semibold">Sort by Price</label>
                     <select
                         id="sortPrice"
                         className="p-2 rounded-md shadow-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500"

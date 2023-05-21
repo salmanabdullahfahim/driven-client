@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import UseTitle from '../../Hooks/useTitle';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -52,7 +52,7 @@ const UpdateToy = () => {
 
     return (
         <>
-            <h2 className='text-center text-3xl font-bold mt-6'>Update Toy: {toyName}</h2>
+            <h2 className='text-center text-3xl font-bold mt-6 italic'>Update Toy: {toyName}</h2>
             <div className="w-8/12 mx-auto my-12 border-2 border-gray-600 p-6 md:p-12 rounded">
                 <form onSubmit={handleSubmit}>
                     <div className='grid grid-cols-2 gap-2 '>

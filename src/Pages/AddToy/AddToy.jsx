@@ -51,7 +51,7 @@ const AddToy = () => {
     }
     return (
         <>
-            <h2 className='text-center text-3xl font-bold mt-6'>Add a Toy</h2>
+            <h2 className='text-center text-3xl font-bold mt-6 italic'>Add a Toy</h2>
             <div className="w-8/12 mx-auto my-12 border-2 border-gray-600 p-6 md:p-12 rounded">
                 <form onSubmit={handleAddToy}>
                     <div className='grid grid-cols-2 gap-2 '>
