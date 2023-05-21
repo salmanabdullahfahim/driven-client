@@ -16,7 +16,7 @@ const MyToys = () => {
     const [sortOption, setSortOption] = useState('');
 
 
-    const url = `http://localhost:5000/myToys?email=${user?.email}&sort=${sortOption}`;
+    const url = `https://driven-server.vercel.app/myToys?email=${user?.email}&sort=${sortOption}`;
 
     useEffect(() => {
         setIsLoading(true);
@@ -53,7 +53,7 @@ const MyToys = () => {
                     'success'
                 )
 
-                fetch(`http://localhost:5000/toys/${id}`, {
+                fetch(`https://driven-server.vercel.app/toys/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

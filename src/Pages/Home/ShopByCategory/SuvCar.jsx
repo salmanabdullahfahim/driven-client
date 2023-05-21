@@ -5,7 +5,7 @@ const SuvCar = () => {
 
     const [toys, setToys] = useState([]);
 
-    const url = `http://localhost:5000/CategoryToys/SUVCar`
+    const url = `https://driven-server.vercel.app/CategoryToys/SUVCar`
     useEffect(()=>{
         fetch(url)
         .then(res => res.json())

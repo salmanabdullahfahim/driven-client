@@ -2,9 +2,13 @@ import React from 'react';
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom';
 
+import { Rating } from "@smastrom/react-rating";
+
+import "@smastrom/react-rating/style.css";
+
 const ToyCard = ({ toy }) => {
 
-    const { _id, toyName, category, price, availableQuantity, sellerName, picture } = toy
+    const { _id, toyName, category, price, availableQuantity, sellerName, picture, rating } = toy
     return (
         <div className="w-[350px] mx-auto rounded-md border">
             <img
@@ -31,9 +35,21 @@ const ToyCard = ({ toy }) => {
                     <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
                         Price: $ {price}
                     </span>
-                    <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
-                        Available Quantity: {availableQuantity}
-                    </span>
+                    <div className='flex justify-between'>
+                        <span className="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
+                            Available Quantity: {availableQuantity}
+                        </span>
+                        <div className='flex gap-2 items-center'>
+                            <Rating
+                                style={{ maxWidth: 60 }}
+                                value={rating}
+                                readOnly
+                            ></Rating>
+
+                            <span className="ml-3 inline-block text-xs font-semibold">{rating}</span>
+                        </div>
+
+                    </div>
                 </div>
                 <Link to={`/toyDetails/${_id}`}>
                     <button

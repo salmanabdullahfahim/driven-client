@@ -23,7 +23,7 @@ const UpdateToy = () => {
             price, availableQuantity, details
         }
 
-        fetch(`http://localhost:5000/updateToy/${_id}`, {
+        fetch(`https://driven-server.vercel.app/updateToy/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

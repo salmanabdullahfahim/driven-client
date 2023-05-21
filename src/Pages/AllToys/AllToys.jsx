@@ -12,7 +12,7 @@ const AllToys = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('http://localhost:5000/toys')
+        fetch('https://driven-server.vercel.app/toys')
             .then(res => res.json())
             .then(data => {
 
@@ -24,7 +24,7 @@ const AllToys = () => {
 
     const handleSearch = () => {
         setIsLoading(true);
-        fetch(`http://localhost:5000/toySearchByName/${searchText}`)
+        fetch(`https://driven-server.vercel.app/toySearchByName/${searchText}`)
             .then(res => res.json())
             .then(data => {
                 setToys(data);
