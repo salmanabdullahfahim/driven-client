@@ -78,7 +78,12 @@ const MyToys = () => {
             <div className="w-full mt-6 flex justify-end">
                 <div className="flex mb-4 items-center">
                     <label htmlFor="sortPrice" className="mr-2">Sort by Price:</label>
-                    <select id="sortPrice" className="p-2  rounded-xl shadow-md" value={sortOption} onChange={handleSortChange}>
+                    <select
+                        id="sortPrice"
+                        className="p-2 rounded-md shadow-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                        value={sortOption}
+                        onChange={handleSortChange}
+                    >
                         <option value="">Select</option>
                         <option value="asc">Low to High</option>
                         <option value="desc">High to Low</option>
@@ -87,7 +92,7 @@ const MyToys = () => {
             </div>
 
 
-            <div className="overflow-x-auto w-full">
+            <div className="overflow-x-auto w-11/12 mx-auto mb-8">
                 {isLoading ? (
                     <div className="flex justify-center items-center h-32">
                         <div className="loader">

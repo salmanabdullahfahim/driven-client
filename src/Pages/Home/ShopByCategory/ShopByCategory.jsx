@@ -11,9 +11,9 @@ const ShopByCategory = () => {
             <h3 className='text-3xl font-bold text-center my-6'>Shop by category</h3>
             <Tabs >
                 <TabList className="flex justify-center my-6">
-                    <Tab className="p-4 cursor-pointer ">Mini Police Car</Tab>
-                    <Tab className="p-4 cursor-pointer ">SUV Car</Tab>
-                    <Tab className="p-4 cursor-pointer ">Sports Car</Tab>
+                    <Tab className=" cursor-pointer btn btn-outline rounded">Mini Police Car</Tab>
+                    <Tab className="cursor-pointer btn btn-outline ml-2">SUV Car</Tab>
+                    <Tab className=" cursor-pointer btn btn-outline ml-2">Sports Car</Tab>
                 </TabList>
 
                 <TabPanel>

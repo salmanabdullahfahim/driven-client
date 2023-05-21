@@ -23,17 +23,17 @@ const ToyRow = ({ toy, handleDelete }) => {
                 </div>
             </td>
             <td>
-                <h3>{price} $</h3>
+                <h3 className='text-center'>{price} $</h3>
 
             </td>
-            <td>{availableQuantity}</td>
+            <td className='text-center'>{availableQuantity}</td>
             <td>
                 {sellerName}
             </td>
             <td>
-                <Link to={`/updateToys/${_id}`}> <button className='bg-green-500 rounded p-1 mr-2'>Update</button></Link>
+                <Link to={`/updateToys/${_id}`}> <button className='bg-green-500 hover:bg-green-600 text-white font-semibold rounded p-2 mr-2'>Update</button></Link>
 
-                <button className='bg-red-500  rounded p-1' onClick={() => handleDelete(_id)}>Delete</button>
+                <button className='bg-red-500 hover:bg-red-600 text-white font-semibold rounded p-2' onClick={() => handleDelete(_id)}>Delete</button>
             </td>
         </tr>
     );
