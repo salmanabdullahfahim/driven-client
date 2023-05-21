@@ -9,10 +9,12 @@ const AllToys = () => {
     const [toys, setToys] = useState([]);
     const [searchText, setSearchText] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    const [limit, setLimit] = useState(20)
+
 
     useEffect(() => {
         setIsLoading(true);
-        fetch('https://driven-server.vercel.app/toys')
+        fetch(`https://driven-server.vercel.app/toys?limit=${limit}`)
             .then(res => res.json())
             .then(data => {
 
@@ -20,7 +22,7 @@ const AllToys = () => {
                 setIsLoading(false);
 
             })
-    }, [])
+    }, [limit])
 
     const handleSearch = () => {
         setIsLoading(true);
@@ -95,6 +97,9 @@ const AllToys = () => {
                             }
                         </tbody>
                     </table>
+                    <div hidden={!limit} className='w-1/12 mx-auto mt-4'>
+                        <button onClick={()=> setLimit(0)} className='btn mx-auto'>See All</button>
+                    </div>
                 </div>)
             }
         </div>

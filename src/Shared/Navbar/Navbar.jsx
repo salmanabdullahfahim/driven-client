@@ -46,7 +46,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div >
-                        <Link to='/' className='flex items-center'><img className='w-20' src={logo1} alt="" />
+                        <Link to='/' className='flex items-center '><img className='w-20 hidden md:block' src={logo1} alt="" />
                             <h3 className='font-bold text-2xl ml-3 text-white italic'>Driven..</h3>
                         </Link>
 
