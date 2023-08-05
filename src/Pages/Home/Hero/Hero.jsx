@@ -31,7 +31,6 @@ const Hero = () => {
                 <div className="lg:col-span-5 lg:-mr-8 xl:col-span-6 my-auto mt-12">
 
                     <Lottie animationData={heroAnimation} />
-
                 </div>
             </div>
         </div>

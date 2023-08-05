@@ -3,9 +3,9 @@ import React from 'react';
 const Feedback = () => {
     return (
         <div data-aos="fade-right" data-aos-easing="ease-out-cubic"
-        data-aos-duration="1000">
+        data-aos-duration="1000" className='flex flex-col md:flex-row justify-between'>
             <section className="px-2 py-10 md:px-0">
-                <figure className="mx-auto max-w-5xl">
+                <figure className="mx-auto max-w-3xl pl-8">
                     <h1 className="mb-4 text-4xl font-semibold text-black">What customers are saying ?</h1>
                     <blockquote className="mt-10 text-xl text-gray-900">
                         <p>
@@ -40,7 +40,11 @@ const Feedback = () => {
                         </div>
                     </figcaption>
                 </figure>
+                
             </section>
+
+            <img src="/carWash.png" className='w-1/2 mx-auto' alt="" />
+
             
         </div>
     );

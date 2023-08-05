@@ -10,7 +10,7 @@ import Feedback from '../Feedback/Feedback';
 const Home = () => {
     UseTitle('Home')
     return (
-        <div className='bg-white'>
+        <div>
             <Hero></Hero>
             <Gallery></Gallery>
             <ShopByCategory></ShopByCategory>
