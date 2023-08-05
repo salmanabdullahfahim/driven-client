@@ -31,7 +31,7 @@ const Gallery = () => {
     }, []);
 
     return (
-        <>
+        <div className="bg-white">
 
             <div>
                 <h2 className="text-center font-semibold text-3xl mt-3">Toy Gallery</h2>
@@ -77,7 +77,7 @@ const Gallery = () => {
                     
                 </Swiper>
             </div>
-        </>
+        </div>
     );
 };
 

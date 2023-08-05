@@ -73,14 +73,14 @@ const MyToys = () => {
     };
 
     return (
-        <>
+        <div className='bg-white'>
             <h2 className='text-center font-bold text-3xl mt-6 italic'> My Toys</h2>
             <div className="w-full mt-6 ">
                 <div className="flex mb-4 items-center justify-end mr-12">
                     <label htmlFor="sortPrice" className="mr-2 text-md font-semibold">Sort by Price</label>
                     <select
                         id="sortPrice"
-                        className="p-2 rounded-md shadow-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                        className="p-2 rounded-md shadow-xl border  bg-white border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500"
                         value={sortOption}
                         onChange={handleSortChange}
                     >
@@ -120,7 +120,7 @@ const MyToys = () => {
                 )}
             </div>
 
-        </>
+        </div>
     );
 };
 

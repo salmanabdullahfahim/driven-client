@@ -16,7 +16,7 @@ const ToyDetails = () => {
     const { toyName, category, price, availableQuantity, sellerName, picture, details, sellerEmail, rating } = toy
 
     return (
-        <section className="overflow-hidden">
+        <section className="overflow-hidden bg-white">
             <div className="mx-auto max-w-5xl px-5 py-24">
                 <div className="mx-auto flex flex-wrap items-center lg:w-full">
                     <img

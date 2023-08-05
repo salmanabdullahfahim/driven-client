@@ -35,7 +35,7 @@ const AllToys = () => {
     }
 
     return (
-        <div>
+        <div className='bg-white'>
             <h2 className='text-3xl font-bold text-center my-6 italic'>All Toys</h2>
 
 
