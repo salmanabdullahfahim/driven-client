@@ -7,7 +7,7 @@ const ToyRow = ({ toy, handleDelete }) => {
 
   
     return (
-        <tr className='bg-white'>
+        <tr className=''>
 
             <td>
                 <div className="flex items-center space-x-3">

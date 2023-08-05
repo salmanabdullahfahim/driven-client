@@ -92,7 +92,7 @@ const MyToys = () => {
             </div>
 
 
-            <div className="overflow-x-auto w-11/12 mx-auto mb-8">
+            <div className="overflow-x-auto w-11/12 mx-auto mb-8 bg-white">
                 {isLoading ? (
                     <div className="flex justify-center items-center h-32">
                         <div className="loader">
@@ -100,7 +100,7 @@ const MyToys = () => {
                         </div>
                     </div>
                 ) : (
-                    <table className="table w-full">
+                    <table className="table w-full bg-white">
                         {/* head */}
                         <thead>
                             <tr>
