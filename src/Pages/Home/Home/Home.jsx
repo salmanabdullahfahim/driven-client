@@ -6,6 +6,7 @@ import ShopByCategory from '../ShopByCategory/ShopByCategory';
 import UseTitle from '../../../Hooks/useTitle';
 import ToyCompany from '../ToyCompany/ToyCompany';
 import Feedback from '../Feedback/Feedback';
+import Apps from '../Apps/Apps';
 
 const Home = () => {
     UseTitle('Home')
@@ -17,6 +18,7 @@ const Home = () => {
             <ToyCompany></ToyCompany>
             <Feedback></Feedback>
             <Stats></Stats>
+            <Apps></Apps>
             
         </div>
     );
